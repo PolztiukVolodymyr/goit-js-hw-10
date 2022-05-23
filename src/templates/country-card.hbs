@@ -4,11 +4,11 @@
     width="100px" height="70px"/>
 </div>
 <h1 class="title-card">{{name.official}}</h1>
-<p class="text-card">Capital: {{capital}}</p>
-<p class="text-card">Population: {{population}}</p>
+<p class="text-card">Capital: <span class="text-card-name">{{capital}}</span></p>
+<p class="text-card">Population: <span class="text-card-name">{{population}}</span></p>
 <p class="text-card">Languages: 
     {{#each languages}}
-     <span> {{this}} </span>
+     <span class="text-card-name"> {{this}} </span>
     {{/each}}
 </p>
 {{/each}}

@@ -17,14 +17,13 @@ refs.form.addEventListener("input", debounce(onFormInput, DEBOUNCE_DELAY));
 
 
 function onFormInput(evn) {
-
   const userRequest = evn.target.value.trim();
 
   if (Boolean(!userRequest)) { return };
        fetchCountries(userRequest)
-      .then(country => {
+         .then(country => {
+        
       if (Boolean(!country)) {
-        refs.infoDiv.innerHTML = "";
       };
           
       if (country.length > 10) {

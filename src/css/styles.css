@@ -30,7 +30,13 @@ align-items: center;
    margin-left: 10px;
 }
 
-/* .text-card{
+.text-card{
    font-size: 20px;
-   font-weight: 300;
-} */
+   font-weight: 500;
+}
+
+.text-card-name{
+font-size: 20px;
+font-weight: 300;
+
+}
