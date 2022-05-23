@@ -19,17 +19,17 @@ refs.form.addEventListener("input", debounce(onFormInput, DEBOUNCE_DELAY));
 function onFormInput(evn) {
 
   const userRequest = evn.target.value.trim();
-  // console.log(userRequest === true);
-  if (!userRequest) { return };
+
+  if (Boolean(!userRequest)) { return };
        fetchCountries(userRequest)
       .then(country => {
-      if (!country) {
+      if (Boolean(!country)) {
         refs.infoDiv.innerHTML = "";
       };
           
       if (country.length > 10) {
         Notiflix.Notify.info("Too many matches found. Please enter a more specific name.");
-        return
+        refs.infoDiv.innerHTML = "";
       };
 
       if (country.length > 1 && country.length <= 10) {
@@ -42,6 +42,8 @@ function onFormInput(evn) {
         refs.infoDiv.innerHTML = markup;
       };
          
-   }).catch(err => Notiflix.Notify.failure("Oops, there is no country with that name"))
+      }).catch(err => {
+        Notiflix.Notify.failure("Oops, there is no country with that name")
+       refs.infoDiv.innerHTML = "" })
   
 };
